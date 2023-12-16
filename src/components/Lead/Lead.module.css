@@ -1,0 +1,89 @@
+.block {
+  background-color: #313131;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  border: 2px solid #fff;
+  padding: 2px;
+  max-width: 724px;
+}
+
+.textContainer {
+  padding: 0 0 54px;
+}
+
+.text_1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.text_2 {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+
+.text_3 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+  margin: 0;
+}
+
+.marqueeLeft {
+  animation: marqueeLeft 70s linear infinite;
+}
+
+.marqueeRight {
+  animation: marqueeRight 70s linear infinite;
+}
+
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

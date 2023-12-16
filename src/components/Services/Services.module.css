@@ -1,0 +1,23 @@
+.block {
+  padding: 56px 0 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #3369f2;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .block {
+    padding: 56px 16px 0;
+  }
+}
