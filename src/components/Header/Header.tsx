@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Logo, Menu, Close } from "@/components/ui/icons";
 import { useMediaQuery } from "@/hooks/useMeadiQuery";
 import { ChangeEvent, FC, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 interface HeaderProps {
   menuItems: {
@@ -13,17 +13,14 @@ interface HeaderProps {
   }[];
 }
 
-type DefaultType = "ru" | "kk" | "en";
-
 export const Header: FC<HeaderProps> = ({ menuItems }) => {
+  const { locale } = useParams();
   const router = useRouter();
   const matches = useMediaQuery("(max-width: 576px)");
   const [open, setOpen] = useState(false);
-  const [defaultValue, setDefaultValue] = useState<DefaultType>("ru");
 
   const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
     router.push(event.target.value);
-    setDefaultValue(event.target.value as DefaultType);
   };
 
   const openMenu = () => setOpen(true);
@@ -46,11 +43,7 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
             ))}
           </ul>
         </nav>
-        <select
-          onChange={onChange}
-          className={styles.select}
-          value={defaultValue}
-        >
+        <select onChange={onChange} className={styles.select} value={locale}>
           <option value="kk">Қазақша</option>
           <option value="ru">Русский</option>
           <option value="en">English</option>
@@ -88,11 +81,7 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
               ))}
             </ul>
           </nav>
-          <select
-            onChange={onChange}
-            className={styles.select}
-            value={defaultValue}
-          >
+          <select onChange={onChange} className={styles.select} value={locale}>
             <option value="kk">Қазақша</option>
             <option value="ru">Русский</option>
             <option value="en">English</option>

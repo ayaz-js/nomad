@@ -1,0 +1,162 @@
+.block {
+  padding: 56px 0 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.circle_1 {
+  position: absolute;
+  z-index: -1;
+}
+
+.circle_2 {
+  position: absolute;
+  z-index: -1;
+  top: 22%;
+  left: 0;
+}
+
+.circle_3 {
+  position: absolute;
+  z-index: -1;
+  top: 34%;
+  right: 0;
+}
+
+.circle_4 {
+  position: absolute;
+  z-index: -3;
+  top: 44%;
+  right: 4%;
+}
+
+.portrait {
+  width: 100%;
+  height: 856px;
+  object-fit: contain;
+  display: block;
+}
+
+.circle_1 {
+  animation: floatCircle1 5s ease-in-out infinite;
+  /* Rest of your styles */
+}
+
+.circle_2 {
+  animation: floatCircle2 6s ease-in-out infinite;
+  /* Rest of your styles */
+}
+
+.circle_3 {
+  animation: floatCircle3 7s ease-in-out infinite;
+  /* Rest of your styles */
+}
+
+.circle_4 {
+  animation: floatCircle4 8s ease-in-out infinite;
+  /* Rest of your styles */
+}
+
+@keyframes floatCircle1 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatCircle2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px);
+  }
+}
+
+@keyframes floatCircle3 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -10px);
+  }
+}
+
+@keyframes floatCircle4 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, 20px);
+  }
+}
+
+.textContainer {
+  margin-left: auto;
+  max-width: 876px;
+  width: 100%;
+}
+
+.link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #d3464f;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.subtitle {
+  font-size: 64px;
+  line-height: 36px;
+  margin: 0;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.listTitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 16px;
+  margin: 0;
+}
+
+.listItem {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 786px) {
+  .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .textContainer {
+    padding: 0 16px;
+  }
+}
