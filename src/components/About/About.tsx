@@ -56,23 +56,23 @@ export const About = ({}: AboutProps) => {
         <div className={styles.imageContainer}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="148"
+            width="225"
             height="226"
-            viewBox="0 0 148 226"
+            viewBox="0 0 225 226"
             fill="none"
             className={styles.circle_1}
           >
-            <circle cx="35.5" cy="113.442" r="112.5" fill="#C224BC" />
+            <circle cx="112.503" cy="113.443" r="112.5" fill="#C224BC" />
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="167"
+            width="178"
             height="179"
-            viewBox="0 0 167 179"
+            viewBox="0 0 178 179"
             fill="none"
             className={styles.circle_2}
           >
-            <circle cx="78" cy="89.9421" r="89" fill="#3369F2" />
+            <circle cx="89.0029" cy="89.9427" r="89" fill="#3369F2" />
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,19 +106,26 @@ export const About = ({}: AboutProps) => {
               fill="#C224BC"
             />
           </svg>
-          <Image
-            src="/images/portrait.png"
-            width={1000}
-            height={856}
-            alt={t("name")}
-            className={styles.portrait}
-          />
+          <picture>
+            <source srcSet="/images/portrait.png" media="(min-width: 786px)" />
+            <source
+              srcSet="/images/portrait-mobile.png"
+              media="(max-width: 785px)"
+            />
+            <Image
+              src="/images/portrait.png"
+              width={1000}
+              height={856}
+              alt={t("name")}
+              className={styles.portrait}
+            />
+          </picture>
         </div>
         <div className={styles.textContainer}>
           <p className={`${styles.subtitle} ${inter.className}`}>
             {t("hello")}
           </p>
-          <h2>{t("name")}</h2>
+          <h2 className={styles.name}>{t("name")}</h2>
           <Link
             className={styles.link}
             href="https://instagram.com/zarina_qayratqyzy"

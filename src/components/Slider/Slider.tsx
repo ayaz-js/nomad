@@ -13,6 +13,7 @@ interface SliderProps {
   sliderItems?: {
     logo?: string;
     banner?: string;
+    title?: string;
     text?: string;
     list?: string[];
   }[];
@@ -24,7 +25,6 @@ export const Slider = ({ sliderItems }: SliderProps) => {
       <div className={styles.wrapper}>
         <Swiper
           pagination={{
-            dynamicBullets: true,
             clickable: true,
           }}
           modules={[Autoplay, Pagination]}
@@ -37,13 +37,15 @@ export const Slider = ({ sliderItems }: SliderProps) => {
             <SwiperSlide key={index.toString()}>
               <div className={styles.slideContainer}>
                 <div className={styles.textContainer}>
-                  <Image
-                    src={`/images/${slide.logo}`}
-                    width={178}
-                    height={178}
-                    alt=""
-                    className={styles.logo}
-                  />
+                  {slide.logo && (
+                    <Image
+                      src={`/images/${slide.logo}`}
+                      width={178}
+                      height={178}
+                      alt=""
+                      className={styles.logo}
+                    />
+                  )}
                   <ul className={styles.list}>
                     {slide?.list?.map((item, index) => (
                       <li key={index.toString()} className={styles.listItem}>
@@ -52,14 +54,15 @@ export const Slider = ({ sliderItems }: SliderProps) => {
                     ))}
                   </ul>
                 </div>
-
-                <Image
-                  src={`/images/${slide.banner}`}
-                  width={780}
-                  height={488}
-                  alt=""
-                  className={styles.banner}
-                />
+                {slide.banner && (
+                  <Image
+                    src={`/images/${slide.banner}`}
+                    width={780}
+                    height={488}
+                    alt=""
+                    className={styles.banner}
+                  />
+                )}
               </div>
             </SwiperSlide>
           ))}

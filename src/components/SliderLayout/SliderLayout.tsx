@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 interface SliderLayoutProps {
   logo?: string;
   banner?: string;
+  title?: string;
   text?: string;
   list?: string[];
 }
@@ -26,7 +27,7 @@ export const SliderLayout = ({}: SliderLayoutProps) => {
     },
     {
       logo: t("nege_media.logo"),
-      banner: t("naiza.banner"),
+      banner: t("nege_media.banner"),
       list: [
         t("nege_media.list.text_1"),
         t("nege_media.list.text_2"),
@@ -42,6 +43,26 @@ export const SliderLayout = ({}: SliderLayoutProps) => {
         t("nege_media.list.text_2"),
         t("nege_media.list.text_3"),
         t("nege_media.list.text_4"),
+      ],
+    },
+    {
+      logo: t("daryndy_bala.logo"),
+      banner: t("daryndy_bala.banner"),
+      list: [
+        t("daryndy_bala.list.text_1"),
+        t("daryndy_bala.list.text_2"),
+        t("daryndy_bala.list.text_3"),
+        t("daryndy_bala.list.text_4"),
+      ],
+    },
+    {
+      banner: t("i_qobyz.banner"),
+      title: t("i_qobyz.title"),
+      list: [
+        t("i_qobyz.list.text_1"),
+        t("i_qobyz.list.text_2"),
+        t("i_qobyz.list.text_3"),
+        t("i_qobyz.list.text_4"),
       ],
     },
   ];

@@ -1,0 +1,1 @@
+export { WeAreTrustedLayout } from './WeAreTrustedLayout'
