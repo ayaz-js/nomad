@@ -111,10 +111,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .block {
-    padding: 56px 0;
-  }
-
   .textContainer {
     max-width: 600px;
   }
@@ -163,6 +159,10 @@
 
 
 @media screen and (max-width: 786px) {
+  .block {
+    padding: 56px 0;
+  }
+
   .wrapper {
     flex-direction: column;
   }
