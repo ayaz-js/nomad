@@ -18,3 +18,12 @@
 .image:hover {
   filter: grayscale(0);
 }
+
+@media screen and (max-width: 568px) {
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

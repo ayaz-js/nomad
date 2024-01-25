@@ -55,6 +55,10 @@
 }
 
 @media screen and (max-width: 568px) {
+  .podcast {
+    display: block;
+  }
+
   .image {
     width: 100%;
   }

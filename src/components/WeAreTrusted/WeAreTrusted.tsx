@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 
 import { Autoplay } from "swiper/modules";
 import Link from "next/link";
+import { breakpoints } from "./props";
 
 interface WeAreTrustedProps {
   logos?: {
@@ -28,21 +29,15 @@ export const WeAreTrusted = ({ logos }: WeAreTrustedProps) => {
             disableOnInteraction: false,
           }}
           spaceBetween={0}
-          breakpoints={{
-            320: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
+          breakpoints={breakpoints}
         >
           {logos?.map((logo) => (
-            <SwiperSlide key={logo.src}>
-              <Link href={logo.link || ""} target="_blank">
+            <SwiperSlide key={logo.src} className={styles.slide}>
+              <Link
+                href={logo.link || ""}
+                target="_blank"
+                className={styles.link}
+              >
                 <Image
                   src={`/images/${logo.src}`}
                   width={130}
