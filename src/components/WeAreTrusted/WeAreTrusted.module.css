@@ -7,6 +7,13 @@
   margin: 0 auto;
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .image {
   max-width: 140px;
   width: 100%;
@@ -17,13 +24,4 @@
 
 .image:hover {
   filter: grayscale(0);
-}
-
-@media screen and (max-width: 568px) {
-  .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
 }
