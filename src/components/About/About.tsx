@@ -126,12 +126,32 @@ export const About = ({}: AboutProps) => {
             {t("hello")}
           </p>
           <h2 className={styles.name}>{t("name")}</h2>
-          <Link
-            className={styles.link}
-            href="https://instagram.com/zarina_qayratqyzy"
-          >
-            @zarina_qayratqyzy
-          </Link>
+          <div className={styles.links}>
+            <Link
+              className={styles.link}
+              href="https://www.linkedin.com/in/zarina-buyenbayeva-aa87905a/"
+            >
+              <Image
+                src="/images/linkedin.svg"
+                alt="Linkedin - Zarina Buyenbayeva"
+                width={56}
+                height={56}
+                className={styles.icon}
+              />
+            </Link>
+            <Link
+              className={styles.link}
+              href="https://instagram.com/zarina_qayratqyzy"
+            >
+              <Image
+                src="/images/instagram.svg"
+                alt="Instagram - @zarina_qayratqyzy"
+                width={56}
+                height={56}
+                className={styles.icon}
+              />
+            </Link>
+          </div>
           <p className={styles.text}>{t("text_1")}</p>
           <p className={styles.text}>{t("text_2")}</p>
           <p className={styles.listTitle}>{t("skill")}</p>

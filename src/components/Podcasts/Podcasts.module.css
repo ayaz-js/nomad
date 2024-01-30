@@ -57,9 +57,12 @@
 @media screen and (max-width: 568px) {
   .podcast {
     display: block;
+    height: 230px;
   }
 
   .image {
     width: 100%;
+    object-fit: cover;
+    height: auto;
   }
 }

@@ -63,19 +63,20 @@
   display: block;
 }
 
-.link {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 22px;
-  color: #d3464f;
-  text-decoration: none;
-  transition: 0.5s ease-in-out;
+.links {
+  display: flex;
   margin: 12px 0 0;
-  display: block;
+  gap: 16px;
 }
 
-.link:hover {
-  opacity: 0.8;
+.icon {
+  display: block;
+  transition: 0.5s ease-in-out;
+  filter: grayscale(1);
+}
+
+.icon:hover {
+  filter: grayscale(0);
 }
 
 .subtitle {
@@ -183,10 +184,8 @@
     margin-top: 8px;
   }
 
-  .link {
-    text-align: right;
-    display: block;
-    margin-top: 8px;
+  .links {
+    justify-content: flex-end;
   }
 
   .imageContainer {
