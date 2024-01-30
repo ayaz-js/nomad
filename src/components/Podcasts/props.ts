@@ -56,7 +56,7 @@ export const breakpoints = {
     spaceBetween: 30,
   },
   2560: {
-    slidesPerView: 4,
+    slidesPerView: 6,
     spaceBetween: 30,
   },
 };

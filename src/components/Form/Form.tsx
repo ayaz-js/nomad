@@ -103,7 +103,7 @@ export const Form = ({
             className={styles.input}
             placeholder={email}
             required
-            type="text"
+            type="email"
             name="email"
             value={form.email}
             onChange={onChange}

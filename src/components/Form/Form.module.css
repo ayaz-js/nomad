@@ -3,6 +3,7 @@
   background: #323232;
   padding: 62px 0 0;
   display: flex;
+  justify-content: center;
   width: 100%;
 }
 
