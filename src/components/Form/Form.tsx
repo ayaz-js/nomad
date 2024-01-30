@@ -37,8 +37,6 @@ export const Form = ({
     setForm((state) => ({ ...state, [event.target.name]: event.target.value }));
   };
 
-  console.log(form);
-
   const resetForm = () => {
     setForm({
       fullName: "",
