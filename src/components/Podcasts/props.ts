@@ -5,6 +5,10 @@ interface IPodcasts {
 
 export const podcastsItems: IPodcasts[] = [
   {
+    preview: "podcast-5.png",
+    link: "https://www.youtube.com/watch?v=MdmmplR2GLs&ab_channel=7010PODCAST",
+  },
+  {
     preview: "podcast-1.png",
     link: "https://www.youtube.com/watch?v=aPD017T54WY&ab_channel=7010PODCAST",
   },
@@ -19,10 +23,6 @@ export const podcastsItems: IPodcasts[] = [
   {
     preview: "podcast-4.png",
     link: "https://www.youtube.com/watch?v=ucGvM1NqUbY&ab_channel=7010PODCAST",
-  },
-  {
-    preview: "podcast-5.png",
-    link: "https://www.youtube.com/watch?v=MdmmplR2GLs&ab_channel=7010PODCAST",
   },
 ];
 

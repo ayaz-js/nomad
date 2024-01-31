@@ -3,8 +3,9 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import { Logo, Menu, Close } from "@/components/ui/icons";
 import { useMediaQuery } from "@/hooks/useMeadiQuery";
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Select from "react-dropdown-select";
 
 interface HeaderProps {
   menuItems: {
@@ -13,14 +14,48 @@ interface HeaderProps {
   }[];
 }
 
+interface OptionsType {
+  value: string;
+  label: string;
+}
+
 export const Header: FC<HeaderProps> = ({ menuItems }) => {
   const { locale } = useParams();
   const router = useRouter();
   const matches = useMediaQuery("(max-width: 576px)");
   const [open, setOpen] = useState(false);
 
-  const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    router.push(event.target.value);
+  const options: OptionsType[] = [
+    {
+      value: "kk",
+      label: "Қазақша",
+    },
+    {
+      value: "ru",
+      label: "Русский",
+    },
+    {
+      value: "en",
+      label: "English",
+    },
+  ];
+
+  const onChange = (selectedOptions: OptionsType[]) => {
+    return selectedOptions.map((selectedOption) => {
+      router.push(selectedOption.value);
+    });
+  };
+
+  const changePlaceholder = () => {
+    const localeKk = locale === "kk";
+    const localeRu = locale === "ru";
+    const localeEn = locale === "en";
+
+    if (localeKk) return "Қазақша";
+
+    if (localeRu) return "Русский";
+
+    if (localeEn) return "English";
   };
 
   const openMenu = () => setOpen(true);
@@ -43,11 +78,15 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
             ))}
           </ul>
         </nav>
-        <select onChange={onChange} className={styles.select} value={locale}>
-          <option value="kk">Қазақша</option>
-          <option value="ru">Русский</option>
-          <option value="en">English</option>
-        </select>
+        <div className={styles.select}>
+          <Select
+            style={{ borderRadius: 8 }}
+            options={options}
+            values={[]}
+            placeholder={changePlaceholder()}
+            onChange={(options) => onChange(options)}
+          />
+        </div>
       </div>
     </header>
   ) : (
@@ -81,11 +120,15 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
               ))}
             </ul>
           </nav>
-          <select onChange={onChange} className={styles.select} value={locale}>
-            <option value="kk">Қазақша</option>
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-          </select>
+          <div className={styles.select}>
+            <Select
+              style={{ borderRadius: 8 }}
+              options={options}
+              values={[]}
+              placeholder={changePlaceholder()}
+              onChange={(options) => onChange(options)}
+            />
+          </div>
         </div>
       )}
     </header>

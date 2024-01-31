@@ -64,13 +64,20 @@
   animation: marqueeRight 70s linear infinite;
 }
 
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 16px;
+    max-width: 480px;
+    margin-left: 12px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .title {
     font-size: 12px;
     line-height: 22px;
-    max-width: 382px;
+    max-width: 380px;
     text-align: center;
-    margin-left: 12px;
   }
 }
 
